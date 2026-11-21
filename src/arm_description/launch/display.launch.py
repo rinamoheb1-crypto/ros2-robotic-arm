@@ -19,6 +19,7 @@ def generate_launch_description():
              parameters=[{'robot_description': robot_description}]),
         Node(package='joint_state_publisher_gui',
              executable='joint_state_publisher_gui'),
-        Node(package='rviz2', executable='rviz2'),
+        Node(package='rviz2', executable='rviz2',
+		arguments=['-d', os.path.join(pkg, 'rviz', 'arm.rviz')]),
     ])
 
